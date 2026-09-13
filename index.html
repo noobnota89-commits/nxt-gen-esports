@@ -1,157 +1,177 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NXT GEN ESPORTS SCRIMS</title>
-<meta name="description" content="NXT GEN ESPORTS BGMI scrims and tournaments">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NXT GEN ESPORTS | Supporting Upcoming BGMI Talent</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="nav">
-  <a class="logo" href="#home">NXT GEN <b>ESPORTS</b></a>
+
+<header class="header">
+  <a href="#home" class="brand">NXT GEN <span>ESPORTS</span></a>
   <nav>
-    <a href="#scrims">Scrims</a>
-    <a href="#register">Register</a>
+    <a href="#categories">Scrims</a>
     <a href="#points">Point Table</a>
     <a href="#about">About</a>
+    <a href="#register" class="nav-register">Register</a>
   </nav>
-  <a class="nav-btn" href="#register">Book Slot</a>
 </header>
 
 <main id="home">
-  <section class="hero">
-    <div class="hero-copy">
-      <div class="eyebrow">NXT GEN ESPORTS SCRIMS</div>
-      <h1>COMPETE.<br><span>EARN.</span><br>DOMINATE.</h1>
-      <p>Daily BGMI scrims built for competitive squads, rising players and the next generation of esports talent.</p>
-      <div class="hero-actions">
-        <a href="#scrims" class="primary">Explore Scrims</a>
-        <a href="#register" class="secondary">Register Team</a>
+
+<section class="hero">
+  <div class="hero-content">
+    <p class="eyebrow">NXT GEN ESPORTS</p>
+    <h1>SUPPORTING<br><span>UPCOMING BGMI</span><br>TALENT</h1>
+    <p class="hero-text">
+      NXT GEN ESPORTS is creating a dedicated arena for rising BGMI players,
+      competitive squads, and passionate esports fans to compete, earn,
+      and dominate the battleground.
+    </p>
+    <a href="#categories" class="hero-button">EXPLORE SCRIMS</a>
+  </div>
+</section>
+
+<section id="categories" class="categories">
+  <div class="section-heading">
+    <p>OUR TOP CATEGORIES</p>
+    <h2>Explore What We Offer</h2>
+  </div>
+
+  <div class="cards">
+
+    <article class="card poster-card">
+      <div class="card-image">
+        <img src="poster.png" alt="NXT GEN ESPORTS Daily Grind Scrims">
       </div>
-      <div class="stats">
-        <div><strong>18</strong><small>Teams / timing</small></div>
-        <div><strong>6</strong><small>Daily timings</small></div>
-        <div><strong>₹</strong><small>Manual payment</small></div>
+      <div class="card-body">
+        <h3>NXT GEN ESPORTS DAILY GRIND SCRIMS</h3>
+        <p>Daily high quality scrims with a maximum of 18 teams per timing.</p>
+        <a href="#register" class="explore">Explore <span>→</span></a>
       </div>
-    </div>
-    <div class="hero-poster">
-      <a href="#register"><img src="poster.png" alt="NXT GEN ESPORTS scrims poster"></a>
-      <small>Tap poster to register</small>
-    </div>
-  </section>
+    </article>
 
-  <section id="scrims" class="section">
-    <div class="section-title">
-      <span>OUR TOP CATEGORY</span>
-      <h2>Explore What We Offer</h2>
-      <p>Choose a timing, check availability and book your team.</p>
-    </div>
-
-    <div class="filters">
-      <button class="filter active" data-filter="all">All</button>
-      <button class="filter" data-filter="open">Available</button>
-      <button class="filter" data-filter="full">Sold Out</button>
-    </div>
-
-    <div id="scrimGrid" class="scrim-grid"></div>
-  </section>
-
-  <section id="register" class="section register-section">
-    <div class="section-title">
-      <span>TEAM REGISTRATION</span>
-      <h2>Book Your Scrim Slot</h2>
-      <p>Submit your details and WhatsApp will open with a ready-made registration message.</p>
-    </div>
-    <div class="register-layout">
-      <div class="register-info">
-        <div class="info-card">
-          <b>How it works</b>
-          <ol>
-            <li>Select your timing.</li>
-            <li>Enter your team details.</li>
-            <li>Send the WhatsApp message.</li>
-            <li>Send payment proof on WhatsApp.</li>
-            <li>Your slot is confirmed manually after payment verification.</li>
-          </ol>
-        </div>
-        <div class="info-card">
-          <b>Registration rules</b>
-          <p>Maximum 18 teams per timing. If a timing is full, choose another timing or contact the organisers.</p>
-        </div>
+    <article class="card visual-card">
+      <div class="visual-placeholder advance">
+        <span>ADVANCE<br>SCRIMS</span>
       </div>
+      <div class="card-body">
+        <h3>NXT GEN ESPORTS ADVANCE SCRIMS</h3>
+        <p>Competitive daily matches for squads looking for tougher lobbies.</p>
+        <a href="#register" class="explore">Explore <span>→</span></a>
+      </div>
+    </article>
 
-      <form id="registrationForm" class="form-card">
-        <label>Team name
-          <input name="teamName" required placeholder="Enter team name">
-        </label>
-        <label>Contact number
-          <input name="contact" type="tel" inputmode="numeric" required placeholder="10-digit WhatsApp number">
-        </label>
-        <label>Slot timing
-          <select name="timing" required></select>
-        </label>
-        <label>Number of slots needed
-          <input name="slots" type="number" min="1" max="18" value="1" required>
-        </label>
-        <label>Price category
-          <select name="price" required>
-            <option value="">Select price category</option>
-            <option value="40">₹40</option>
-            <option value="60">₹60</option>
-            <option value="120">₹120</option>
-          </select>
-        </label>
-        <div class="total-row"><span>Estimated total</span><strong id="total">₹0</strong></div>
-        <button class="primary wide" type="submit">CONTINUE ON WHATSAPP</button>
-        <p id="formMessage" class="form-message"></p>
-      </form>
-    </div>
-  </section>
+    <article class="card visual-card">
+      <div class="visual-placeholder weekly">
+        <span>WEEKLY<br>WAR</span>
+      </div>
+      <div class="card-body">
+        <h3>NXT GEN ESPORTS WEEKLY WAR</h3>
+        <p>Special events and bigger competitions. Coming soon!</p>
+        <a href="#register" class="explore">Explore <span>→</span></a>
+      </div>
+    </article>
 
-  <section id="points" class="section">
-    <div class="section-title">
-      <span>COMPETITIVE RESULTS</span>
-      <h2>Point Table</h2>
-      <p>Backend-ready section for future match standings and results.</p>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>Rank</th><th>Team</th><th>Position</th><th>Kills</th><th>Total</th></tr></thead>
-        <tbody>
-          <tr><td>—</td><td>Results will appear here</td><td>—</td><td>—</td><td>—</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+    <article id="points" class="card visual-card">
+      <div class="visual-placeholder points">
+        <span>POINT<br>TABLE</span>
+      </div>
+      <div class="card-body">
+        <h3>POINT TABLE</h3>
+        <p>Check the latest standings, points, kills and ranks of completed matches.</p>
+        <a href="#point-table" class="explore">Explore <span>→</span></a>
+      </div>
+    </article>
 
-  <section id="about" class="section about">
-    <div class="section-title">
-      <span>ABOUT NXT GEN</span>
-      <h2>Built for the next generation of BGMI players</h2>
-    </div>
-    <p>NXT GEN ESPORTS SCRIMS is focused on giving competitive squads a simple place to find scrims, book timings and grow through consistent matches.</p>
-    <div class="about-grid">
-      <div><b>Fair Play</b><span>Competitive matches with clear rules.</span></div>
-      <div><b>Daily Scrims</b><span>Multiple timings for different schedules.</span></div>
-      <div><b>Community</b><span>Supporting players and team growth.</span></div>
-    </div>
-  </section>
+  </div>
+</section>
 
-  <section class="section policies">
-    <details><summary>Terms & Fair Play</summary><p>Players are expected to play fairly. Hacking, teaming, exploits, abusive behaviour or other unfair play can lead to disqualification. Match-specific rules will be published by the organisers.</p></details>
-    <details><summary>Refund & Cancellation</summary><p>Refunds and slot reopening are handled manually by the organisers. A cancelled/refunded slot may be reopened when confirmed by the organiser.</p></details>
-    <details><summary>Privacy</summary><p>Registration details are used for scrim communication, slot confirmation and tournament administration.</p></details>
-  </section>
+<section id="register" class="register-section">
+  <div class="section-heading">
+    <p>TEAM REGISTRATION</p>
+    <h2>Register Your Team</h2>
+    <p class="sub">Choose your timing and send the registration directly through WhatsApp.</p>
+  </div>
+
+  <div class="register-box">
+    <form id="registrationForm">
+      <label>Team name
+        <input name="teamName" required placeholder="Enter team name">
+      </label>
+
+      <label>Contact number
+        <input name="contact" type="tel" required placeholder="WhatsApp number">
+      </label>
+
+      <label>Slot timing
+        <select name="timing" required>
+          <option value="">Select timing</option>
+        </select>
+      </label>
+
+      <label>Number of slots needed
+        <input name="slots" type="number" min="1" max="18" value="1" required>
+      </label>
+
+      <label>Price category
+        <select name="price" required>
+          <option value="">Select price category</option>
+          <option value="40">₹40</option>
+          <option value="60">₹60</option>
+          <option value="120">₹120</option>
+        </select>
+      </label>
+
+      <div class="availability" id="availability"></div>
+      <button type="submit">CONTINUE ON WHATSAPP</button>
+      <p id="message"></p>
+    </form>
+  </div>
+</section>
+
+<section id="point-table" class="point-section">
+  <div class="section-heading">
+    <p>COMPETITIVE RESULTS</p>
+    <h2>Point Table</h2>
+  </div>
+  <div class="table-box">
+    <table>
+      <thead>
+        <tr><th>Rank</th><th>Team</th><th>Position</th><th>Kills</th><th>Total</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>—</td><td>Matches will appear here</td><td>—</td><td>—</td><td>—</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <p class="eyebrow">ABOUT NXT GEN ESPORTS</p>
+  <h2>Built for the next generation of esports stars.</h2>
+  <p>
+    NXT GEN ESPORTS is driven by a passion for competitive gaming and a commitment
+    to BGMI excellence. We create opportunities, support emerging talent and build
+    a strong competitive community.
+  </p>
+</section>
+
 </main>
 
 <footer>
-  <div><b>NXT GEN ESPORTS SCRIMS</b><p>Competitive BGMI scrims for the next generation.</p></div>
-  <a href="#register">Register</a>
-  <a href="#scrims">Scrims</a>
-  <a href="#points">Point Table</a>
-  <p class="copyright">© 2026 NXT GEN ESPORTS. All rights reserved.</p>
+  <div class="footer-brand">NXT GEN <span>ESPORTS</span></div>
+  <div class="footer-links">
+    <a href="#about">About Us</a>
+    <a href="#register">Contact Us</a>
+    <a href="#about">Privacy Policy</a>
+    <a href="#about">Refund & Cancellation</a>
+    <a href="#about">Terms</a>
+  </div>
+  <p>© 2026 NXT GEN ESPORTS. All rights reserved.</p>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>
