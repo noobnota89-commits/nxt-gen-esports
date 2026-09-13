@@ -1,0 +1,2 @@
+document.getElementById("year").textContent=new Date().getFullYear();
+function submitForm(e){e.preventDefault();document.getElementById("form-msg").textContent="Registration request saved locally. Connect this form to WhatsApp or a backend before going live.";e.target.reset();}
