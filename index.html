@@ -9,45 +9,68 @@
 <body>
 <header class="topbar">
   <div class="brand">NXT GEN <span>ESPORTS</span> SCRIMS</div>
-  <a href="#register">REGISTER</a>
+  <a href="#register" class="register-link">REGISTER</a>
 </header>
+
 <main>
-<section class="poster">
-  <button onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">
-    <img src="poster.png" alt="NXT GEN ESPORTS Daily Grind Scrims poster">
-    <b>Tap to Register</b>
-  </button>
-</section>
+  <section class="hero">
+    <a href="#register" class="poster-link" aria-label="Go to registration">
+      <img src="poster.png" alt="NXT GEN ESPORTS Daily Grind Scrims poster">
+    </a>
+    <p class="tap-note">Tap the poster to register</p>
+  </section>
 
-<section class="availability">
-  <p class="eyebrow">LIVE AVAILABILITY</p>
-  <h1>Choose your timing</h1>
-  <p>Maximum 18 teams per timing.</p>
-  <div id="slots" class="grid"></div>
-</section>
+  <section class="availability">
+    <div class="section-head">
+      <span>LIVE SLOTS</span>
+      <h1>Choose your timing</h1>
+      <p>Maximum 18 teams per timing.</p>
+    </div>
+    <div id="slots" class="slots"></div>
+  </section>
 
-<section id="register" class="register">
-  <p class="eyebrow">REGISTRATION</p>
-  <h1>Book your scrim slot</h1>
-  <p>Payment confirmation will be handled through WhatsApp.</p>
-  <form id="form">
-    <label>Team name<input id="team" required placeholder="Enter team name"></label>
-    <label>Contact number<input id="contact" type="tel" required placeholder="WhatsApp number"></label>
-    <label>Slot timing<select id="timing" required>
-      <option value="">Select timing</option>
-      <option>1–3 PM</option><option>3–5 PM</option><option>5–7 PM</option>
-      <option>7–9 PM</option><option>9–11 PM</option><option>11 PM–1 AM</option>
-    </select></label>
-    <label>Number of slots needed<input id="number" type="number" min="1" max="18" value="1" required></label>
-    <label>Price category<select id="price" required>
-      <option value="">Select price category</option><option>₹40</option><option>₹60</option><option>₹120</option>
-    </select></label>
-    <button type="submit">REGISTER VIA WHATSAPP</button>
-    <small id="message"></small>
-  </form>
-</section>
+  <section id="register" class="register">
+    <div class="section-head">
+      <span>REGISTRATION</span>
+      <h1>Book your scrim slot</h1>
+      <p>After submitting, WhatsApp will open with your registration details.</p>
+    </div>
+
+    <form id="registrationForm" class="form-card">
+      <label>Team name
+        <input name="teamName" required placeholder="Enter team name">
+      </label>
+
+      <label>Contact number
+        <input name="contact" type="tel" required placeholder="WhatsApp number">
+      </label>
+
+      <label>Slot timing
+        <select name="timing" required>
+          <option value="">Select timing</option>
+        </select>
+      </label>
+
+      <label>Number of slots needed
+        <input name="slots" type="number" min="1" max="18" value="1" required>
+      </label>
+
+      <label>Price category
+        <select name="price" required>
+          <option value="">Select price category</option>
+          <option value="40">₹40</option>
+          <option value="60">₹60</option>
+          <option value="120">₹120</option>
+        </select>
+      </label>
+
+      <button type="submit">REGISTER VIA WHATSAPP</button>
+      <div id="formMessage" class="message"></div>
+    </form>
+  </section>
 </main>
-<footer><strong>NXT GEN ESPORTS SCRIMS</strong><span>Built for the grind.</span></footer>
+
+<footer>NXT GEN ESPORTS SCRIMS</footer>
 <script src="script.js"></script>
 </body>
 </html>
